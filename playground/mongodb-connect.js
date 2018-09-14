@@ -3,7 +3,7 @@ const {MongoClient, ObjectID} = require('mongodb');
 
 const url = 'mongodb://localhost:27017/TodoApp';
 
-MongoClient.connect(url, (err, client) => {
+MongoClient.connect(url, {useNewUrlParser: true}, (err, client) => {
     if (err) {
         console.log('Unable to connect to MongoDB server');
     }
