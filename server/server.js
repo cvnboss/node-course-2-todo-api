@@ -18,7 +18,7 @@ app.post('/todos', (req, res) => {
 
     todo.save().then((doc) => {
         res.send(doc);
-    }, (e) => {
+    }).catch((e) => {
         res.status(400).send({"errors": e.errors.text.message});
     });
 });
@@ -26,7 +26,7 @@ app.post('/todos', (req, res) => {
 app.get('/todos', (req, res) => {
     Todo.find().then((todos) => {
         res.send({todos})
-    }, (e) => {
+    }).catch((e) => {
         res.status(400).send({"errors": e.errors.text.message});
     });
 });
@@ -49,7 +49,6 @@ app.get('/todos/:id', (req, res) => {
         res.status(400).send({"errors": e});
     })
 });
-
 
 app.listen(port, () => {
     console.log(`Started up at port ${port}`);
