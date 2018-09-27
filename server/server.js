@@ -130,7 +130,7 @@ app.post('/users/login', (req, res) => {
             res.header('x-auth', token).send(user);
         })
     }).catch((e) => {
-        res.status(400).send({error: e.message});
+        res.status(400).send({error: e});
     });
 });
 
