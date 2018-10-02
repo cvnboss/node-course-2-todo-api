@@ -1,8 +1,8 @@
-const {ObjectID} = require('mongodb');
+const { ObjectID } = require('mongodb');
 
-const {mongoose} = require('./../server/db/mongoose');
-const {Todo} = require('./../server/models/todo');
-const {User} = require('./../server/models/user');
+const { mongoose } = require('./../server/db/mongoose');
+const { Todo } = require('./../server/models/todo');
+const { User } = require('./../server/models/user');
 
 // Todo.remove({}).then((result) => {
 //     console.log(result);
@@ -12,8 +12,10 @@ const {User} = require('./../server/models/user');
 //     console.log(result);
 // });
 
-Todo.findByIdAndRemove('asf').then((result) => {
-    console.log(result);
-}).catch((e) => {
-    console.log(`Error: ${e.message}`);
-});
+Todo.findByIdAndRemove('asf')
+    .then(result => {
+        console.log(result);
+    })
+    .catch(e => {
+        console.log(`Error: ${e.message}`);
+    });

@@ -1,10 +1,10 @@
-const {ObjectID} = require('mongodb');
+const { ObjectID } = require('mongodb');
 
-const {mongoose} = require('./../server/db/mongoose');
-const {Todo} = require('./../server/models/todo');
-const {User} = require('./../server/models/user');
+const { mongoose } = require('./../server/db/mongoose');
+const { Todo } = require('./../server/models/todo');
+const { User } = require('./../server/models/user');
 
-var id = "ba4af9b53177b284c94cfe7";
+var id = 'ba4af9b53177b284c94cfe7';
 
 if (!ObjectID.isValid(id)) {
     console.log('ID not valid');
@@ -30,12 +30,15 @@ if (!ObjectID.isValid(id)) {
 //     console.log(e);
 // })
 
-User.findById('5b9b3c6d52961241f017474c').then((user) => {
-    if (!user) {
-        return console.log('Unable to find user');
-    }
+User.findById('5b9b3c6d52961241f017474c').then(
+    user => {
+        if (!user) {
+            return console.log('Unable to find user');
+        }
 
-    console.log('User', JSON.stringify(user, undefined, 2));
-}, (e) => {
-    console.log(e);
-})
+        console.log('User', JSON.stringify(user, undefined, 2));
+    },
+    e => {
+        console.log(e);
+    }
+);
