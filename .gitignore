@@ -2,3 +2,4 @@
 /.vscode
 package-lock.json
 .eslintrc.js
+server/config/config.json
